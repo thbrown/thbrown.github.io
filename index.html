@@ -11,10 +11,10 @@
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
   <script>
   $( function() {
@@ -36,64 +36,73 @@
 </head>
 <body>
 
-Inputs:
-<div class="container-fluid" style="border:1px solid #cecece;">
-    <div class="row">                                           
-      <form id="reservation">
-        <label for="minbeds">Yearly Retirement Contributions:</label>
-          <input type="text" name="contributions">
-      </form>
-    </div>                                                      
-    <div class="row">                                           
-      <form id="reservation">
-        <label for="minbeds">Yearly Expenses:</label>
-          <input type="text" name="contributions">
-      </form>
-    </div>                                                        
+<div class="container col-md">
+  <div class="row">
+    <div class="col" style="border:1px solid #cecece;">
+      <div class="row">
+        <h1>Inputs</h1>
+      </div>
+      <div class="row">                                           
+        <form id="reservation">
+          <label for="minbeds">Yearly Retirement Contributions:</label>
+            <input type="text" name="contributions">
+        </form>
+      </div>                                                      
+      <div class="row">                                           
+        <form id="reservation">
+          <label for="minbeds">Yearly Expenses:</label>
+            <input type="text" name="contributions">
+        </form>
+      </div>                                                        
+    </div>
+    <div class="col">
+      <div class="row">
+        <h1>Assumptions</h1>
+      </div>
+      <div class="container-fluid" style="border:1px solid #cecece;">
+        <div class="row">                                           
+          <form id="reservation">
+            <label for="minbeds">ROI</label>
+            <select name="minbeds" id="minbeds">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+            </select>
+          </form>
+        </div>
+        <div class="row">
+          <div class="col-xs-12"> Buttons here </div> 
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
-Assumptions:
-<div class="container-fluid" style="border:1px solid #cecece;">
-    <div class="row">                                           
-      <form id="reservation">
-        <label for="minbeds">Minimum number of beds</label>
-        <select name="minbeds" id="minbeds">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-          <option>6</option>
-        </select>
-      </form>
-    </div>
-    <div class="row">
-      <div class="col-xs-12"> Buttons here </div> 
-    </div>
+
+  <div>
+    Outputs:
+    <div class="container-fluid" style="border:1px solid #cecece;">
+        <div class="row">
+          <label for="spinner">How much money do you need to retire:</label>
+          <output id="spinner" name="value" />
+        </div>
+        <div class="row">
+          <label for="spinner">How many years until retirement:</label>
+          <output id="spinner" name="value" />
+        </div>
+        <div class="row">
+          <label for="spinner">How old will you be when you retire:</label>
+          <input id="spinner" name="value" />
+        </div>
+        <div class="row">
+          <label for="spinner">If you buy this thing, you will retire this much later:</label>
+          <div class="col-xs-2"> Buttons here </div> 
+        </div>
+  </div>    
 </div>
-
-Outputs:
-<div class="container-fluid" style="border:1px solid #cecece;">
-    <div class="row">
-      <label for="spinner">How much money do you need to retire:</label>
-      <output id="spinner" name="value">
-    </div>
-    <div class="row">
-      <label for="spinner">How many years until retirement:</label>
-      <output id="spinner" name="value">
-    </div>
-    <div class="row">
-      <label for="spinner">How old will you be when you retire:</label>
-      <input id="spinner" name="value">
-    </div>
-    <div class="row">
-      <label for="spinner">If you buy this thing, you will reture this much later:</label>
-      <div class="col-xs-2"> Buttons here </div> 
-    </div>
-</div>    
-
-
- 
- 
+</div>
 </body>
 </html>
