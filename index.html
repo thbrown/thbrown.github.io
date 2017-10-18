@@ -3,11 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>jQuery UI Slider - Slider bound to select</title>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
+  <title>How much is this going to cost me?</title>
+  <!-- <link rel="stylesheet" href="jquery-ui.css"> -->
+  <!-- <script src="bootstrap.min.js"></script> -->
+  <!-- <script src="jquery-1.12.4.js"></script> -->
+  <!-- <script src="jquery-ui.js"></script> -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
   <script>
   $( function() {
     var select = $( "#minbeds" );
@@ -27,18 +35,64 @@
   </script>
 </head>
 <body>
- 
-<form id="reservation">
-  <label for="minbeds">Minimum number of beds</label>
-  <select name="minbeds" id="minbeds">
-    <option>1</option>
-    <option>2</option>
-    <option>3</option>
-    <option>4</option>
-    <option>5</option>
-    <option>6</option>
-  </select>
-</form>
+
+Inputs:
+<div class="container-fluid" style="border:1px solid #cecece;">
+    <div class="row">                                           
+      <form id="reservation">
+        <label for="minbeds">Yearly Retirement Contributions:</label>
+          <input type="text" name="contributions">
+      </form>
+    </div>                                                      
+    <div class="row">                                           
+      <form id="reservation">
+        <label for="minbeds">Yearly Expenses:</label>
+          <input type="text" name="contributions">
+      </form>
+    </div>                                                        
+</div>
+
+Assumptions:
+<div class="container-fluid" style="border:1px solid #cecece;">
+    <div class="row">                                           
+      <form id="reservation">
+        <label for="minbeds">Minimum number of beds</label>
+        <select name="minbeds" id="minbeds">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+        </select>
+      </form>
+    </div>
+    <div class="row">
+      <div class="col-xs-12"> Buttons here </div> 
+    </div>
+</div>
+
+Outputs:
+<div class="container-fluid" style="border:1px solid #cecece;">
+    <div class="row">
+      <label for="spinner">How much money do you need to retire:</label>
+      <output id="spinner" name="value">
+    </div>
+    <div class="row">
+      <label for="spinner">How many years until retirement:</label>
+      <output id="spinner" name="value">
+    </div>
+    <div class="row">
+      <label for="spinner">How old will you be when you retire:</label>
+      <input id="spinner" name="value">
+    </div>
+    <div class="row">
+      <label for="spinner">If you buy this thing, you will reture this much later:</label>
+      <div class="col-xs-2"> Buttons here </div> 
+    </div>
+</div>    
+
+
  
  
 </body>
