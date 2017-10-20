@@ -18,7 +18,7 @@
 
   <script>
   $( function () {
-    var select = $( "#minbeds" );
+    var select = $( "#minBedsSlider" );
     var slider = $( "<div id='slider'></div>" ).insertAfter( select ).slider({
       min: 1,
       max: 6,
@@ -28,7 +28,7 @@
         select[ 0 ].selectedIndex = ui.value - 1;
       }
     });
-    $( "#minbeds" ).on( "change", function() {
+    $( "#minBedsSlider" ).on( "change", function() {
       slider.slider( "value", this.selectedIndex + 1 );
     });
   } );
@@ -52,7 +52,7 @@
   } );
   </script>
 
-    <script>
+  <script>
   $( function () {
     var select = $( "#yearsRemainingSlider" );
     var slider = $( "<div id='slider'></div>" ).insertAfter( select ).slider({
@@ -65,6 +65,24 @@
       }
     });
     $( "#yearsRemainingSlider" ).on( "change", function() {
+      slider.slider( "value", this.selectedIndex + 1 );
+    });
+  } );
+  </script>
+
+  <script>
+  $( function () {
+    var select = $( "#retirementAgeSlider" );
+    var slider = $( "<div id='slider'></div>" ).insertAfter( select ).slider({
+      min: 1,
+      max: 6,
+      range: "min",
+      value: select[ 0 ].selectedIndex + 1,
+      slide: function( event, ui ) {
+        select[ 0 ].selectedIndex = ui.value - 1;
+      }
+    });
+    $( "#retirementAgeSlider" ).on( "change", function() {
       slider.slider( "value", this.selectedIndex + 1 );
     });
   } );
@@ -97,7 +115,6 @@
 </head>
 <body>
 
-<div class="container col-md">
   <div class="row">
     <div class="col" style="border:1px solid #cecece;">
       <div class="row">
@@ -116,82 +133,81 @@
         </form>
       </div>                                                        
     </div>
-    <div class="col">
-      <div class="row">
-        <h1>Assumptions</h1>
-      </div>
-      <div class="container-fluid" style="border:1px solid #cecece;">
-        <div class="row">                                           
-          <form id="reservation">
-            <label for="minbeds">ROI</label>
-            <select name="minbeds" id="minbeds">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-              <option>6</option>
-            </select>
-          </form>
-        </div>
-        <div class="row">
-          <div class="col-xs-12"> Buttons here </div> 
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
+  <div class="container-fluid" style="border:1px solid #cecece;">
+      <h1>Assumptions</h1>
+      <div class="container-fluid" style="border:1px solid #cecece;">
+        <div class="row">
+          <div class="col-xs-4"> 
+            <label for="minbeds">ROI</label>
+          </div>
+          <div class="col-xs-3">                                          
+            <form id="reservation">
+              <select name="minbeds" id="minbeds">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+              </select>
+            </form>
+          </div>
+          <div class="col-xs-3">
+            <div id="minBedsSlider" name="value" /></div>
+          </div> 
+        </div>
+      </div>
+  </div>
 
   <div>
-    Outputs:
+    <h1>Outputs:</h1>
     <div class="container-fluid" style="border:1px solid #cecece;">
-        <div class="row">
-          <div class="col-xs-4">
-            <label for="moneyNeeded">How much money do you need to retire:</label>
-          </div>
-          <div class="col-xs-3">
-            <input id="moneyNeeded" name="value" />
-          </div>
-          <div class="col-xs-5">
-            <div id="moneyNeededSlider" name="value" /></div>
-          </div>
+      <div class="row">
+        <div class="col-xs-4">
+          <label for="moneyNeeded">How much money do you need to retire:</label>
         </div>
-        <div class="row">
-          <div class="col-xs-4">
-            <label for="yearsRemaining">How many years remaining until retirement:</label>
-          </div>
-          <div class="col-xs-3">
-            <input id="yearsRemaining" name="value" />
-          </div>
-          <div class="col-xs-5">
-            <div id="yearsRemainingSlider" name="value" /></div>
-          </div>
+        <div class="col-xs-3">
+          <input id="moneyNeeded" name="value" />
         </div>
-        <div class="row">
-          <div class="col-xs-4">
-            <label for="retirementYear">Your age at retirement:</label>
-          </div>
-          <div class="col-xs-3">
-            <input id="retirementYear" name="value" />
-          </div>
-          <div class="col-xs-5">
-            <div id="retirementYearSlider" name="value" /></div>
-          </div>
+        <div class="col-xs-5">
+          <div id="moneyNeededSlider" name="value" /></div>
         </div>
-        <div class="row">
-          <div class="col-xs-4">
-            <label for="purchaseConsequence">If you buy this thing, you will reture this much later:</label>
-          </div>
-          <div class="col-xs-3">
-            <input id="purchaseConsequence" name="value" />
-          </div>
-          <div class="col-xs-5">
-            <div id="purchaseConsequenceSlider" name="value" /></div>
-          </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-4">
+          <label for="yearsRemaining">How many years remaining until retirement:</label>
         </div>
-  </div>    
-</div>
-</div>
+        <div class="col-xs-3">
+          <input id="yearsRemaining" name="value" />
+        </div>
+        <div class="col-xs-5">
+          <div id="yearsRemainingSlider" name="value" /></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-4">
+          <label for="retirementAge">Your age at retirement:</label>
+        </div>
+        <div class="col-xs-3">
+          <input id="retirementAge" name="value" />
+        </div>
+        <div class="col-xs-5">
+          <div id="retirementAgeSlider" name="value" /></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-4">
+          <label for="purchaseConsequence">If you buy this thing, you will reture this much later:</label>
+        </div>
+        <div class="col-xs-3">
+          <input id="purchaseConsequence" name="value" />
+        </div>
+        <div class="col-xs-5">
+          <div id="purchaseConsequenceSlider" name="value" /></div>
+        </div>
+      </div>
+    </div>    
+  </div>
 </body>
 </html>
